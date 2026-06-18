@@ -1,17 +1,32 @@
-# React Native Reproducer
+# React Native reproducer for iOS 26.2 accessibility-tree regression
 
-> [!IMPORTANT]  
-> Do not just **fork** this repository, but use instead the [![Use this template](https://img.shields.io/badge/-Use%20this%20template-brightgreen)](https://github.com/cortinico/reproducer-react-native/generate) button on GitHub.
+This repository is based on the official React Native reproducer template.
 
-This is the React Native **reproducer** template. 
+The actual repro app lives in `ReproducerApp/`.
 
-You can use this template to create a minimal, complete, and reproducible project that the community can use to understand what's your problem. You can read more about the principles of a good reproducible project [here](https://stackoverflow.com/help/mcve).
+## Repro summary
 
-This template is up to date with `react-native@latest` as you can find it on [npm](https://www.npmjs.com/package/react-native/v/latest).
+On iOS 26.2 with React Native 0.85.3 and the New Architecture enabled, the React Native UI is visibly rendered on screen but can be largely missing from the XCUITest accessibility tree.
 
-## How to use this repository
+## App location
 
-1. Click on [![Use this template](https://img.shields.io/badge/-Use%20this%20template-brightgreen)](https://github.com/cortinico/reproducer-react-native/generate) button to create a new repository starting from this one.
-2. Git clone your repository locally.
-3. Edit the project to reproduce the failure you're seeing.
-4. Push your changes, so that Github Actions can run the CI.
+- `ReproducerApp/`
+
+## Run
+
+```bash
+cd ReproducerApp
+npm install
+cd ios
+bundle install
+bundle exec pod install
+cd ..
+npx react-native start --port 8081
+```
+
+In a second terminal:
+
+```bash
+cd ReproducerApp
+npx react-native run-ios --simulator "iPhone 17 Pro" --port 8081
+```

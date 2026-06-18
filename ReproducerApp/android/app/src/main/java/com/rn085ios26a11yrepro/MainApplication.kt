@@ -1,4 +1,4 @@
-package com.reproducerapp
+package com.rn085ios26a11yrepro
 
 import android.app.Application
 import com.facebook.react.PackageList

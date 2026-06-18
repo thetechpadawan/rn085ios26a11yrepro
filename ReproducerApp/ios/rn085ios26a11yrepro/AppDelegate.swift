@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
 
     factory.startReactNative(
-      withModuleName: "ReproducerApp",
+      withModuleName: "rn085ios26a11yrepro",
       in: window,
       launchOptions: launchOptions
     )
